@@ -1,6 +1,6 @@
 - name: create ec2 and r53
   hosts: local
-  become: yes
+  become: no
   vars:
     ami_id: ami-0055977a6e828a4f4
     sg_id: sg-0c78e7bf8220fd024
