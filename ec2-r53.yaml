@@ -1,0 +1,28 @@
+- name: create ec2 and r53
+  hosts: local
+  become: yes
+  vars:
+    ami_id: ami-0055977a6e828a4f4
+    sg_id: sg-0c78e7bf8220fd024
+    zone_id: Z04643442ZTLYTFXOKMNX
+    domain_name: "daws-88.shop"
+    instances:
+        - mongodb
+  tasks:
+    - name: create EC2 instances
+      amazon.aws.ec2_instance:
+        instance_type: t3.micro
+        image_id: "{{ ami_id }}"
+        security_group: "{{ sg_id }}"
+        name: "{{ item }}"
+        tags:
+          name: "{{ item }}" 
+      loop: "{{ instances }}"
+      register: ec2_output
+
+    - name: print  ec2_output
+      ansible.builtin.debug:
+        msg: "{{ ec2_output }}"  
+      
+
+
