@@ -31,7 +31,7 @@
          type: A 
          ttl: 1
          record: "{{ item.item }}.{{ domain_name }}" # mongodb.daws88.shop
-         value: "{{ item.instance[0].private_ip_addresses }}" # here inside ec2_output results we ahve content of item ther we ahve instance
+         value: "{{ item.instances[0].private_ip_address }}" 
          overwrite: true
       loop: "{{ ec2_output.results }}" 
 
