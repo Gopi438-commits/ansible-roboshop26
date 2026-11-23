@@ -5,7 +5,7 @@
     ami_id: ami-0055977a6e828a4f4
     sg_id: sg-0c78e7bf8220fd024
     zone_id: Z04643442ZTLYTFXOKMNX
-    domain_name: "daws-88.shop"
+    domain_name: "daws88.shop"
     instances:
         - mongodb
   tasks:
