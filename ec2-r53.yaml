@@ -30,8 +30,8 @@
          zone: "{{ domain_name }}" 
          type: A 
          ttl: 1
-         record: "{{ item.item }}.{{ domain_name }}" # mongodb.daws88.shop
-         value: "{{ item.instances[0].private_ip_address }}" 
+         record: "{{ item.item }}.{{ domain_name }}" # mongodb.daws88.shop -ikkada loop okka keyword item and output lo unna item(search cheyi)mongo
+         value: "{{ item.instances[0].private_ip_address }}" # ikkada output results lo unna item lo intsnace lodhi private ip 
          overwrite: true
       loop: "{{ ec2_output.results }}" 
 
