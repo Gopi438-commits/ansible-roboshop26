@@ -11,7 +11,7 @@
 
     - name: install redis
       ansible.builtin.package:
-         name: redis 7
+         name: redis 
          state: present
 
     - name: allow remote connections
